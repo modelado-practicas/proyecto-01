@@ -1,8 +1,11 @@
 public interface Pais {
-	public String Saludar();
-	public String Despedirse();
-	public String FinalizarCompra();
-	public String EstimarEntrega();
-	public String MandarOferta();
+	public String saludar();
+	public String despedirse();
+	public String finalizarCompra();
+	public String estimarEntrega();
+	public String mandarOferta();
+	public String menu();
+	public String realizarCompra();
+	public String agregarAlCarro();
 
 }

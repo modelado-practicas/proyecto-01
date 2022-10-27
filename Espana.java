@@ -12,6 +12,14 @@ public class Espana implements Pais{
 	private String Oferta = "¡¡¡Enhorabuena!!!\n"
 			+ "Has sido uno de los pocos premiados con un descuento en el departamento de "
 			+ "electrodomesticos.";
+	private String Menu = "1. ver catalogo.\n"
+			+ "2. Realizar compra.\n"
+			+ "3. Salir.";
+	private String RealizarCompra = "1. Agregar producto al carrito.\n"
+			+ "2. Pagar.\n"
+			+ "3. Salir.";
+	private String AgregarAlCarro = "Ingresa el numero del articulo que te "
+			+ "gustaria agregar a tu carrito compras: ";
 
 	
 	private String getSaludo() {
@@ -33,29 +41,57 @@ public class Espana implements Pais{
 	private String getOferta() {
 		return Oferta;
 	}
+	
+	public String getMenu() {
+		return Menu;
+	}
+
+	public String getRealizarCompra() {
+		return RealizarCompra;
+	}
+	
+
+	public String getAgregarAlCarro() {
+		return AgregarAlCarro;
+	}
 
 	@Override
-	public String Saludar() {
+	public String saludar() {
 		return getSaludo();
 	}
 
 	@Override
-	public String Despedirse() {
+	public String despedirse() {
 		return getDespedida();
 	}
 
 	@Override
-	public String FinalizarCompra() {
+	public String finalizarCompra() {
 		return getCompraTerminada();
 	}
 
 	@Override
-	public String EstimarEntrega() {
+	public String estimarEntrega() {
 		return getFechaEntrega();
 	}
 
 	@Override
-	public String MandarOferta() {
+	public String mandarOferta() {
 		return getOferta();
+	}
+
+	@Override
+	public String menu() {
+		return getMenu();
+	}
+
+	@Override
+	public String realizarCompra() {
+		return getRealizarCompra();
+	}
+
+	@Override
+	public String agregarAlCarro() {
+		return getAgregarAlCarro();
 	}
 }
