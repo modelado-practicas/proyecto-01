@@ -37,5 +37,17 @@ public class Nacionalidad {
 	public String agregarAlCarro() {
 		return Nacion.agregarAlCarro();
 	}
+	
+	public String carroVacio() {
+		return Nacion.carroVacio();
+	}
+	
+	public String datosBancarios() {
+		return Nacion.datosBanco();
+	}
+	
+	public String errorPago() {
+		return Nacion.errorPago();
+	}
 
 }

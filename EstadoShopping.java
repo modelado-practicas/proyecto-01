@@ -4,6 +4,5 @@ public interface EstadoShopping {
 	public void agregarAlCarro();
 	public void pagar();
 	public void salir();
-	public void inicial();
 
 }

@@ -14,12 +14,15 @@ public class Espana implements Pais{
 			+ "electrodomesticos.";
 	private String Menu = "1. ver catalogo.\n"
 			+ "2. Realizar compra.\n"
-			+ "3. Salir.";
+			+ "0. Salir.";
 	private String RealizarCompra = "1. Agregar producto al carrito.\n"
 			+ "2. Pagar.\n"
-			+ "3. Salir.";
+			+ "0. Salir.";
 	private String AgregarAlCarro = "Ingresa el numero del articulo que te "
 			+ "gustaria agregar a tu carrito compras: ";
+	private String CarroVacio = "Tu carrito esta vacio, intentad agregar algunos articulos.";
+	private String datosBanco = "Ingresa tu cuenta bancaria para finalizar tu compra: ";
+	private String PagoRechazado = "Vaya tio... .___. \nAlgo ha salido mal y no hemos podido completar tu pago.";
 
 	
 	private String getSaludo() {
@@ -53,6 +56,21 @@ public class Espana implements Pais{
 
 	public String getAgregarAlCarro() {
 		return AgregarAlCarro;
+	}
+	
+	
+
+	public String getCarroVacio() {
+		return CarroVacio;
+	}
+	
+
+	public String getDatosBanco() {
+		return datosBanco;
+	}
+
+	public String getPagoRechazado() {
+		return PagoRechazado;
 	}
 
 	@Override
@@ -93,5 +111,20 @@ public class Espana implements Pais{
 	@Override
 	public String agregarAlCarro() {
 		return getAgregarAlCarro();
+	}
+
+	@Override
+	public String carroVacio() {
+		return getCarroVacio();
+	}
+
+	@Override
+	public String datosBanco() {
+		return getDatosBanco();
+	}
+
+	@Override
+	public String errorPago() {
+		return getPagoRechazado();
 	}
 }

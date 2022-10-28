@@ -13,12 +13,16 @@ public class Mexico implements Pais{
 			+ "Eres uno de los afortunados en obtener un descuento en el departamento de abarratos.";
 	private String Menu = "1. ver productos.\n"
 			+ "2. Comprar.\n"
-			+ "3. Salir.";
+			+ "0. Salir.";
 	private String RealizarCompra = "1. Agregar producto a la cesta.\n"
 			+ "2. Pagar.\n"
-			+ "3. Salir.";
+			+ "0. Salir.";
 	private String AgregarAlCarro = "Ingresa el numero del producto que te "
 			+ "gustaria agregar a tu cesta de compras: ";
+	private String CarroVacio = "Creo que tienes la cesta vacia, intenta agregando "
+			+ "algun producto";
+	private String datosBanco = "Ingresa tu cuenta bancaria para finalizar tu compra: ";
+	private String PagoRechazado = "Ups... .___. \nAlgo salio mal con tu pago.";
 
 	
 	private String getSaludo() {
@@ -52,6 +56,21 @@ public class Mexico implements Pais{
 
 	public String getAgregarAlCarro() {
 		return AgregarAlCarro;
+	}
+	
+	
+
+	public String getCarroVacio() {
+		return CarroVacio;
+	}
+	
+
+	public String getDatosBanco() {
+		return datosBanco;
+	}
+
+	public String getPagoRechazado() {
+		return PagoRechazado;
 	}
 
 	@Override
@@ -92,5 +111,20 @@ public class Mexico implements Pais{
 	@Override
 	public String agregarAlCarro() {
 		return getAgregarAlCarro();
+	}
+
+	@Override
+	public String carroVacio() {
+		return getCarroVacio();
+	}
+
+	@Override
+	public String datosBanco() {
+		return getDatosBanco();
+	}
+
+	@Override
+	public String errorPago() {
+		return getPagoRechazado();
 	}
 }
