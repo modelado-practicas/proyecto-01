@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Catalogo{
+public class Catalogo implements InterfazCatalogo{
 	private ArrayList<Producto> productos = new ArrayList<>();
 
 	public Catalogo(){

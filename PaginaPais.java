@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.Scanner;
 
 public class PaginaPais {
 	private int opcion;
@@ -44,13 +45,13 @@ public class PaginaPais {
 	
 	//metodo para imprimir catalogo
 	public void mostrarCatalogo() {
-		Catalogo catalogo = new Catalogo();
+		Catalogo catalogoReal = new Catalogo();
+		CatalogoProxy catalogo = new CatalogoProxy(catalogoReal);
 		Iterator itCatalogo = catalogo.getIterator();
-		int i =1;
+		
 		while(itCatalogo.hasNext()){
 			Producto producto = (Producto)itCatalogo.next();
-			System.out.println("["+i+"] "+producto.toString());
-			i++;
+			System.out.println(producto.toString());
 		}
 	}
 	
@@ -104,15 +105,11 @@ public class PaginaPais {
 	
 	//metodo que verifica el pago
 	public void verificarPagoSeguro() {
-		/*
-		 * acepta el numero de la cuenta bancaria
-		 * si se verifica cambia el valor de compraPagada
-		 */
-		/*
-		 * if ...{
-		 * 		...
-		 * 		compraPagada = True
-		 */
+		Scanner sc = new Scanner(System.in);
+		System.out.println(mensajeDatosBanco());
+		String cuenta = sc.nextLine();
+
+		compraPagada = (cuenta == user.getCuentaBancaria()) ? true : false;
 		
 	}
 	
