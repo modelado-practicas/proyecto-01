@@ -1,5 +1,5 @@
 
-public class Usuario {
+public class Usuario implements Observador{
 	private String idUsuario;
 	private String password;
 	private String nombre;
@@ -7,7 +7,7 @@ public class Usuario {
 	private String direccion;
 	private String cuentaBancaria;
 	private Nacionalidad paisOrigen;
-	
+	private Oferta oferta = null;
 	
 	public Usuario(String idUsuario, String password, String nombre, String telefono, String direccion,
 			String cuentaBancaria, Pais paisOrigen) {
@@ -20,7 +20,10 @@ public class Usuario {
 		this.cuentaBancaria = cuentaBancaria;
 		setPaisOrigen(paisOrigen);
 	}
-	
+	public void darOferta(Oferta oferta){
+        this.oferta = oferta;
+    }
+
 	public String getIdUsuario() {
 		return idUsuario;
 	}
@@ -65,6 +68,9 @@ public class Usuario {
 		Nacionalidad nacion = new Nacionalidad();
 		nacion.nacionalizar(paisOrigen);
 		this.paisOrigen = nacion;
+	}
+	public Oferta getOferta() {
+		return oferta;
 	}
 	
 	

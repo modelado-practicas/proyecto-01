@@ -1,3 +1,3 @@
 public interface Observador{
-    public void actualizar(double descuento);    
+    public void darOferta(Oferta descuento);    
 }

@@ -23,6 +23,9 @@ public class Mexico implements Pais{
 			+ "algun producto";
 	private String datosBanco = "Ingresa tu cuenta bancaria para finalizar tu compra: ";
 	private String PagoRechazado = "Ups... .___. \nAlgo salio mal con tu pago.";
+	private String productoNoEncontrado = "Producto no encontrado";
+	private String encabezadoTicket = "Producto               Precio";
+	private String precioTotalConDescuento = "Precio total con descuento: ";
 
 	
 	private String getSaludo() {
@@ -126,5 +129,20 @@ public class Mexico implements Pais{
 	@Override
 	public String errorPago() {
 		return getPagoRechazado();
+	}
+
+	@Override
+	public String productoNoEncontrado() {
+		return productoNoEncontrado;
+	}
+
+	@Override
+	public String encabezadoTicket() {
+		return encabezadoTicket;
+	}
+
+	@Override
+	public String precioTotalConDescuento() {
+		return precioTotalConDescuento;
 	}
 }

@@ -13,6 +13,9 @@ public class PaginaPais {
 	private EstadoShopping modoInicial;
 	private EstadoShopping modoCarrito;
 	private EstadoShopping modoPagar;
+
+	private CatalogoProxy catalogo;
+	private CarritoDeCompras carrito;
 	
 	
 	public PaginaPais(Usuario UsuarioAtendido) {
@@ -26,8 +29,11 @@ public class PaginaPais {
 		modoPagar = new ModoPagar(this);
 		
 		estadoActual = modoInicial;
-		
-		
+
+		Catalogo catalogoReal = new Catalogo();
+		catalogo = new CatalogoProxy(catalogoReal);
+		carrito = new CarritoDeCompras();
+	
 	}
 	
 	public String Saludar() {
@@ -45,14 +51,13 @@ public class PaginaPais {
 	
 	//metodo para imprimir catalogo
 	public void mostrarCatalogo() {
-		Catalogo catalogoReal = new Catalogo();
-		CatalogoProxy catalogo = new CatalogoProxy(catalogoReal);
 		Iterator itCatalogo = catalogo.getIterator();
-		
+		System.out.println("");
 		while(itCatalogo.hasNext()){
 			Producto producto = (Producto)itCatalogo.next();
 			System.out.println(producto.toString());
 		}
+		System.out.println("");
 	}
 	
 	public String opcionesComprar() {
@@ -62,10 +67,32 @@ public class PaginaPais {
 	public String mensajeAgregarProducto () {
 		return user.getPaisOrigen().agregarAlCarro();
 	}
-	
+
+	private Producto buscarProducto(String codigo){
+		Iterator itCatalogo = catalogo.getIterator();
+		Producto p = null;
+		
+		while(itCatalogo.hasNext()){
+			Producto producto = (Producto)itCatalogo.next();
+			if(producto.getCodigo().equals(codigo)){
+				p = producto;
+				break;
+			}
+		}
+		return p;
+	}
 	//Metodo para agregar productos al carrito (Decorator)
-	public void agregarProductoAlCarro() {
-		//que acepte el numero del articulo y lo agregue
+	public void agregarProductoAlCarro(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println(user.getPaisOrigen().agregarAlCarro());
+		String codigo_producto = sc.nextLine();
+		Producto producto = buscarProducto(codigo_producto);
+		if(producto != null){
+			carrito.agregarProducto(producto);
+		}else{
+			System.out.println(user.getPaisOrigen().productoNoEncontrado());
+		}
+		
 	}
 	
 	public String mensajeCarroVacio() {
@@ -83,13 +110,24 @@ public class PaginaPais {
 	
 	//metodo que hace el desgloce lo del carrito y el costo(decorator) 
 	public void ticket() {
-		
+		ProductoIterator productos = carrito.getIterator();
+		System.out.println("-------------------------------------------");
+		System.out.println(user.getPaisOrigen().encabezadoTicket());
+		while (productos.hasNext()){
+			Producto p = productos.next();
+			System.out.println("["+p.getNombre()+" ....... $"+p.getPrecio()+"]");
+		}
+		System.out.println("Total: $"+carrito.getTotal());
+		System.out.println("-------------------------------------------");
 	}
 	
 	
 	
 	//metodo para mostrar la oferta si tiene el usuario
 	public void mostrarOferta() {
+		if(user.getOferta() != null){
+			System.out.println(user.getPaisOrigen().mandarOferta());
+		}
 		//si el usurio no tiene ofertas, que esto no haga nada
 	}
 	
@@ -97,6 +135,18 @@ public class PaginaPais {
 	public void aplicarOferta() {
 		//que muestre el precio final si se aplico una oferta,
 		//de lo contrario que no haga nada
+		ProductoIterator productos = carrito.getIterator();
+		
+		if(user.getOferta() != null){
+			double descuento = 0;
+			while(productos.hasNext()){
+				Producto p = productos.next();
+				if(user.getOferta().getDepartamento().equals(p.getDepartamento())){
+					descuento += p.getPrecio() * (user.getOferta().getPorcentaje()/100);
+				}
+			}
+			System.out.println("["+user.getPaisOrigen().precioTotalConDescuento()+" 	$"+(carrito.getTotal()-descuento)+"]");
+		}
 	}
 	
 	public String mensajeDatosBanco() {

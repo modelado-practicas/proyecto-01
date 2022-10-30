@@ -10,5 +10,8 @@ public interface Pais {
 	public String carroVacio();
 	public String datosBanco();
 	public String errorPago();
+	public String productoNoEncontrado();
+	public String encabezadoTicket();
+	public String precioTotalConDescuento();
 
 }

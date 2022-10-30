@@ -50,4 +50,15 @@ public class Nacionalidad {
 		return Nacion.errorPago();
 	}
 
+	public String productoNoEncontrado() {
+		return Nacion.productoNoEncontrado();
+	}
+	public String encabezadoTicket(){
+		return Nacion.encabezadoTicket();
+	}
+	public String precioTotalConDescuento(){
+		return Nacion.precioTotalConDescuento();
+	}
+
+
 }

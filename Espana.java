@@ -23,6 +23,9 @@ public class Espana implements Pais{
 	private String CarroVacio = "Tu carrito esta vacio, intentad agregar algunos articulos.";
 	private String datosBanco = "Ingresa tu cuenta bancaria para finalizar tu compra: ";
 	private String PagoRechazado = "Vaya tio... .___. \nAlgo ha salido mal y no hemos podido completar tu pago.";
+	private String productoNoEncontrado = "Producto no encontrado";
+	private String encabezadoTicket = "Producto               Precio";
+	private String precioTotalConDescuento = "Precio total con descuento: ";
 
 	
 	private String getSaludo() {
@@ -127,4 +130,20 @@ public class Espana implements Pais{
 	public String errorPago() {
 		return getPagoRechazado();
 	}
+
+	@Override
+	public String productoNoEncontrado() {
+		return productoNoEncontrado;
+	}
+
+	@Override
+	public String encabezadoTicket() {
+		return encabezadoTicket;
+	}
+
+	@Override
+	public String precioTotalConDescuento() {
+		return precioTotalConDescuento;
+	}
+	
 }

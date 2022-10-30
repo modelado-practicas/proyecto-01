@@ -27,6 +27,9 @@ public class EstadosUnidos implements Pais{
 	private String CarroVacio = "Your cart is empty, try adding a product.";
 	private String datosBanco = "Please enter your bank account information to complete the transaction: ";
 	private String PagoRechazado = "Ups... .___. \nSomething when wrong with your payment.";
+	private String productoNoEncontrado = "product not found";
+	private String encabezadoTicket = "Product               Price";
+	private String precioTotalConDescuento = "Total with discount: ";
 
 	
 	private String getSaludo() {
@@ -130,5 +133,20 @@ public class EstadosUnidos implements Pais{
 	@Override
 	public String errorPago() {
 		return getPagoRechazado();
+	}
+
+	@Override
+	public String productoNoEncontrado() {
+		return productoNoEncontrado;
+	}
+
+	@Override
+	public String encabezadoTicket() {
+		return encabezadoTicket;
+	}
+
+	@Override
+	public String precioTotalConDescuento() {
+		return precioTotalConDescuento;
 	}
 }
