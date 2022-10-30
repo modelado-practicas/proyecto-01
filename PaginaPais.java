@@ -1,3 +1,4 @@
+import java.util.Iterator;
 
 public class PaginaPais {
 	private int opcion;
@@ -43,7 +44,14 @@ public class PaginaPais {
 	
 	//metodo para imprimir catalogo
 	public void mostrarCatalogo() {
-		
+		Catalogo catalogo = new Catalogo();
+		Iterator itCatalogo = catalogo.getIterator();
+		int i =1;
+		while(itCatalogo.hasNext()){
+			Producto producto = (Producto)itCatalogo.next();
+			System.out.println("["+i+"] "+producto.toString());
+			i++;
+		}
 	}
 	
 	public String opcionesComprar() {

@@ -26,4 +26,9 @@ public class Producto{
     public double getPrecio() {
         return precio;
     }
+    
+    @Override
+    public String toString(){
+        return "Producto : "+nombre+", Precio : "+precio+", Departamento : "+departamento+", Codigo : "+codigo;
+    }
 }
