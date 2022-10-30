@@ -3,10 +3,23 @@ public class Usuario {
 	private String idUsuario;
 	private String password;
 	private String nombre;
-	private long telefono;
+	private String telefono;
 	private String direccion;
-	private long cuentaBancaria;
+	private String cuentaBancaria;
 	private Nacionalidad paisOrigen;
+	
+	
+	public Usuario(String idUsuario, String password, String nombre, String telefono, String direccion,
+			String cuentaBancaria, Pais paisOrigen) {
+		super();
+		this.idUsuario = idUsuario;
+		this.password = password;
+		this.nombre = nombre;
+		this.telefono = telefono;
+		this.direccion = direccion;
+		this.cuentaBancaria = cuentaBancaria;
+		setPaisOrigen(paisOrigen);
+	}
 	
 	public String getIdUsuario() {
 		return idUsuario;
@@ -17,13 +30,13 @@ public class Usuario {
 	public String getNombre() {
 		return nombre;
 	}
-	public long getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 	public String getDireccion() {
 		return direccion;
 	}
-	public long getCuentaBancaria() {
+	public String getCuentaBancaria() {
 		return cuentaBancaria;
 	}
 	public Nacionalidad getPaisOrigen() {
@@ -38,18 +51,20 @@ public class Usuario {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public void setTelefono(long telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public void setCuentaBancaria(long cuentaBancaria) {
+	public void setCuentaBancaria(String cuentaBancaria) {
 		this.cuentaBancaria = cuentaBancaria;
 	}
 	
 	public void setPaisOrigen(Pais paisOrigen) {
-		this.paisOrigen.nacionalizar(paisOrigen);
+		Nacionalidad nacion = new Nacionalidad();
+		nacion.nacionalizar(paisOrigen);
+		this.paisOrigen = nacion;
 	}
 	
 	
