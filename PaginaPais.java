@@ -159,7 +159,7 @@ public class PaginaPais {
 		System.out.println(mensajeDatosBanco());
 		String cuenta = sc.nextLine();
 
-		compraPagada = (cuenta == user.getCuentaBancaria()) ? true : false;
+		compraPagada = (cuenta.equals(user.getCuentaBancaria())) ? true : false;
 		
 	}
 	

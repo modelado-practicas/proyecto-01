@@ -28,11 +28,12 @@ public class ModoPagar implements EstadoShopping{
 		pagina.aplicarOferta();
 		pagina.verificarPagoSeguro();
 		if(pagina.isCompraPagada()) {
-			pagina.mensajeCompraExitosa();
+			System.out.println(pagina.mensajeCompraExitosa());
 			pagina.ticket();
 			pagina.mostrarOferta();
 			pagina.aplicarOferta();
-			pagina.mensajeEntrega();
+			System.out.println(pagina.mensajeEntrega());
+			System.out.println();
 			pagina.salir();
 		}else {
 			for (int i = 0; i < 2; i++) {
@@ -51,6 +52,7 @@ public class ModoPagar implements EstadoShopping{
 	@Override
 	public void salir() {
 		System.out.println(pagina.Despedirse());
+		System.out.println();
 		pagina.setSalirTienda(true);
 
 	}

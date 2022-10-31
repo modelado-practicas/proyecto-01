@@ -7,8 +7,9 @@ public class Mexico implements Pais{
 	private String CompraTerminada = "Desearias donar 5 pesos?...¿No? Vale.\n"
 			+ "Hemos checado tus billetes a contraluz la luz y son verdaderos.\n"
 			+ "Muchas gracias por comprar en CheemsMart, bonito dia.";
-	private String FechaEntrega = "Paciencia herma, ya casi tenemos listos tus productos.\n"
-			+ "Nuestros tiempos de espera son entre 2 a 3 dias habiles.";
+	private String FechaEntrega = "Paciencia herma, ya casi tenemos listos tus productos para enviartelos.\n"
+			+ "Nuestros tiempos de espera son entre 2 a 3 dias habiles, pero te aseguramos que haremos, \n"
+			+ "todo lo posible para hacer que tus productos lleguen a ti lo mas rapido posible.";
 	private String Oferta = "¡¡¡Siuuuuuu como dice el bicho!!!\n"
 			+ "Eres uno de los afortunados en obtener un descuento en el departamento de abarratos.";
 	private String Menu = "1. ver productos.\n"

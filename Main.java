@@ -58,7 +58,7 @@ public class Main {
 									break;
 								case 2:
 									pagina.pagar();
-									if(pagina.getEstadoActual() == pagina.getModoPagar()) {
+									if(pagina.getEstadoActual().equals(pagina.getModoPagar())) {
 										pagina.pagar();
 										opcion = 0;
 									}
