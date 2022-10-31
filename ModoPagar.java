@@ -50,7 +50,7 @@ public class ModoPagar implements EstadoShopping{
 
 	@Override
 	public void salir() {
-		pagina.Despedirse();
+		System.out.println(pagina.Despedirse());
 		pagina.setSalirTienda(true);
 
 	}
