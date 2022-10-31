@@ -229,6 +229,10 @@ public class PaginaPais {
 	public EstadoShopping getModoPagar() {
 		return modoPagar;
 	}
+
+	public EstadoShopping getEstadoActual() {
+		return estadoActual;
+	}
 	
 	
 

@@ -23,28 +23,7 @@ public class ModoCarrito implements EstadoShopping{
 	@Override
 	public void pagar() {
 		if(pagina.isCarritoOcupado()) {
-			pagina.ticket();
-			pagina.mostrarOferta();
-			pagina.aplicarOferta();
-			pagina.verificarPagoSeguro();
-			if(pagina.isCompraPagada()) {
-				System.out.println(pagina.mensajeCompraExitosa());
-				pagina.ticket();
-				pagina.mostrarOferta();
-				pagina.aplicarOferta();
-				System.out.println(pagina.mensajeEntrega());
-				pagina.salir();
-			}else {
-				for (int i = 0; i < 2; i++) {
-					System.out.println(pagina.errorPago());
-					pagina.ticket();
-					pagina.mostrarOferta();
-					pagina.aplicarOferta();
-					pagina.verificarPagoSeguro();
-				}
-				System.out.println(pagina.errorPago());
-				pagina.salir();
-			}
+			pagina.asignarNuevoEstado(pagina.getModoPagar());
 		}else {
 			System.out.println(pagina.mensajeCarroVacio());
 		}

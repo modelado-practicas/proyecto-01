@@ -26,7 +26,6 @@ public class ModoPagar implements EstadoShopping{
 		pagina.ticket();
 		pagina.mostrarOferta();
 		pagina.aplicarOferta();
-		pagina.mensajeDatosBanco();
 		pagina.verificarPagoSeguro();
 		if(pagina.isCompraPagada()) {
 			pagina.mensajeCompraExitosa();
@@ -37,14 +36,13 @@ public class ModoPagar implements EstadoShopping{
 			pagina.salir();
 		}else {
 			for (int i = 0; i < 2; i++) {
-				pagina.errorPago();
+				System.out.println(pagina.errorPago());
 				pagina.ticket();
 				pagina.mostrarOferta();
 				pagina.aplicarOferta();
-				pagina.mensajeDatosBanco();
 				pagina.verificarPagoSeguro();
 			}
-			pagina.errorPago();
+			System.out.println(pagina.errorPago());
 			pagina.salir();
 		}
 		
