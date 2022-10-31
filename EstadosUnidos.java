@@ -18,10 +18,12 @@ public class EstadosUnidos implements Pais{
 	
 	private String Menu = "1. Show me the catalog.\n"
 			+ "2. Make a purchase.\n"
-			+ "0. Exit.";
+			+ "0. Exit.\n"
+			+ "Enter the option you would like to execute: ";
 	private String RealizarCompra = "1. Add a product tu the cart.\n"
 			+ "2. Pay.\n"
-			+ "0. Exit.";
+			+ "0. Exit.\n"
+			+ "Enter the option you would like to execute: ";
 	private String AgregarAlCarro = "Please enter the number of the "
 			+ "product you would like to add to the shopping cart: ";
 	private String CarroVacio = "Your cart is empty, try adding a product.";

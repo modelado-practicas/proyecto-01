@@ -10,13 +10,12 @@ public class ModoCarrito implements EstadoShopping{
 	@Override
 	public void catalogo() {
 		pagina.mostrarCatalogo();
-		pagina.opcionesComprar();
+		System.out.println(pagina.opcionesComprar());
 	}
 
 	@Override
 	public void agregarAlCarro() {
 		pagina.mostrarCatalogo();
-		pagina.mensajeAgregarProducto();
 		pagina.agregarProductoAlCarro();;
 		pagina.setCarritoOcupado(true);
 	}
@@ -24,10 +23,30 @@ public class ModoCarrito implements EstadoShopping{
 	@Override
 	public void pagar() {
 		if(pagina.isCarritoOcupado()) {
-			pagina.asignarNuevoEstado(pagina.getModoPagar());
+			pagina.ticket();
+			pagina.mostrarOferta();
+			pagina.aplicarOferta();
+			pagina.verificarPagoSeguro();
+			if(pagina.isCompraPagada()) {
+				System.out.println(pagina.mensajeCompraExitosa());
+				pagina.ticket();
+				pagina.mostrarOferta();
+				pagina.aplicarOferta();
+				System.out.println(pagina.mensajeEntrega());
+				pagina.salir();
+			}else {
+				for (int i = 0; i < 2; i++) {
+					System.out.println(pagina.errorPago());
+					pagina.ticket();
+					pagina.mostrarOferta();
+					pagina.aplicarOferta();
+					pagina.verificarPagoSeguro();
+				}
+				System.out.println(pagina.errorPago());
+				pagina.salir();
+			}
 		}else {
-			pagina.mensajeCarroVacio();
-			pagina.catalogo();
+			System.out.println(pagina.mensajeCarroVacio());
 		}
 		
 		
@@ -35,7 +54,7 @@ public class ModoCarrito implements EstadoShopping{
 
 	@Override
 	public void salir() {
-		pagina.Despedirse();
+		System.out.println(pagina.Despedirse());
 		pagina.setSalirTienda(true);
 	}
 

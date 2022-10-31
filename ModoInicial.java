@@ -10,7 +10,6 @@ public class ModoInicial implements EstadoShopping{
 	@Override
 	public void catalogo() {
 		pagina.mostrarCatalogo();
-		pagina.opcionesMenu();
 	}
 
 	@Override
@@ -29,7 +28,7 @@ public class ModoInicial implements EstadoShopping{
 
 	@Override
 	public void salir() {
-		pagina.Despedirse();
+		System.out.println(pagina.Despedirse());
 		pagina.setSalirTienda(true);
 	}
 

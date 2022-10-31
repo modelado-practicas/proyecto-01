@@ -14,10 +14,12 @@ public class Espana implements Pais{
 			+ "electrodomesticos.";
 	private String Menu = "1. ver catalogo.\n"
 			+ "2. Realizar compra.\n"
-			+ "0. Salir.";
+			+ "0. Salir.\n"
+			+ "Selecciona la opcion que deseais ejecutar: ";
 	private String RealizarCompra = "1. Agregar producto al carrito.\n"
 			+ "2. Pagar.\n"
-			+ "0. Salir.";
+			+ "0. Salir.\n"
+			+ "Selecciona la opcion que deseais ejecutar: ";
 	private String AgregarAlCarro = "Ingresa el numero del articulo que te "
 			+ "gustaria agregar a tu carrito compras: ";
 	private String CarroVacio = "Tu carrito esta vacio, intentad agregar algunos articulos.";

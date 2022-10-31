@@ -13,10 +13,12 @@ public class Mexico implements Pais{
 			+ "Eres uno de los afortunados en obtener un descuento en el departamento de abarratos.";
 	private String Menu = "1. ver productos.\n"
 			+ "2. Comprar.\n"
-			+ "0. Salir.";
+			+ "0. Salir.\n"
+			+ "Selecciona la opcion que deseas realizar: ";
 	private String RealizarCompra = "1. Agregar producto a la cesta.\n"
 			+ "2. Pagar.\n"
-			+ "0. Salir.";
+			+ "0. Salir.\n"
+			+ "Selecciona la opcion que deseas realizar: ";
 	private String AgregarAlCarro = "Ingresa el numero del producto que te "
 			+ "gustaria agregar a tu cesta de compras: ";
 	private String CarroVacio = "Creo que tienes la cesta vacia, intenta agregando "
